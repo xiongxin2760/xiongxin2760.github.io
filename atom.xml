@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiongxin2760.cn/"/>
-  <updated>2018-03-20T12:35:13.693Z</updated>
+  <updated>2018-03-20T13:57:49.485Z</updated>
   <id>http://xiongxin2760.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux command</title>
+    <link href="http://xiongxin2760.cn/2018/03/20/linux-command/"/>
+    <id>http://xiongxin2760.cn/2018/03/20/linux-command/</id>
+    <published>2018-03-20T12:40:19.000Z</published>
+    <updated>2018-03-20T13:57:49.485Z</updated>
+    
+    <content type="html"><![CDATA[<p>前几天一直在学习 linux的基本操作，俗话说的好，好记性不如烂笔头；简单记录如下</p><h1 id="第八章–磁盘与文件系统管理"><a href="#第八章–磁盘与文件系统管理" class="headerlink" title="第八章–磁盘与文件系统管理"></a>第八章–磁盘与文件系统管理</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><pre><code>1. 磁盘是分区的最小单位，所谓磁盘分区就是指定分区在磁盘正的起始和结束柱面。2. 一块磁盘是将分区的详细信息放在第一个扇区的分区表中，所以这一个扇区非常重要，这一扇区仅有64bytes，最多能记录4条分区信息。3. 承上，一块磁盘只能有4个分区记录在第一扇区中，其中主分区和逻辑分区一共最多只能有4个，扩展分区做多只能有一个。4. 由扩展分区可以分出逻辑分区，逻辑分区可以有很多个。5. 能被格式化的分区只有逻辑分区和主分区，扩展分区无法被格式化。6. linux用的文件系统是 ETX2和在其基础上改进的支持日志功能的 etx3文件系统，同时可以使用win的NTFS  FAT文件系统不过需要安装额外的驱动程序。7. 一个可以被挂载的数据为一个文件系统而不是一个分区，一个分区可能分为了好几个文件系统，而一个文件系统也可以跨越很多个分区。8. 逻辑分区的数量根据具体的磁盘大小限制而定。</code></pre><h2 id="linux-的文件系统etx2"><a href="#linux-的文件系统etx2" class="headerlink" title="linux 的文件系统etx2"></a>linux 的文件系统etx2</h2><pre><code>文件系统的属性是在格式化的时候就确定的其后无法更改.superblock: 记录了文件系统的基本信息，包括block大小 inode大小，剩余inode和block数量，是否被挂载等。文件系统描述：记录文件系统不同block groud的起始和结束位置，以及每个区段分别介于那个block之间。块(block)对应表：记录哪些block未被使用。inode对应表：记录哪些inode未被使用。 inode table：记录了文件的属性，包括访问模式，文件所有者与所在组，文件大小，文件的读取修改时间，文件真正的block标号。系统读取文件时需要先读取inode，并分    析文件权限与用户是否符合，如果符合在读取对应block中的内容。</code></pre><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>   dumpe2fs:<br>     功能：查看文件系统信息。<br>     典型用法 dumpe2fs /dev/hdc2<br>   df:<br>     功能：查看目前挂载的设备。<br>   du:<br>     功能：查看目录的大小，可查看目录下子目录及文件大小。<br>   fdisk：<br>     功能：查看磁盘的分区情况。删除或新增分区。<br>   mkfs:<br>     功能：分区格式化。<br>  目录也是文件，记录了目录下的子目录或文件的inode和文件名，她自己的inode里面记录了目录权限。<br>  链接：符号链接，硬链接。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;前几天一直在学习 linux的基本操作，俗话说的好，好记性不如烂笔头；简单记录如下&lt;/p&gt;
+&lt;h1 id=&quot;第八章–磁盘与文件系统管理&quot;&gt;&lt;a href=&quot;#第八章–磁盘与文件系统管理&quot; class=&quot;headerlink&quot; title=&quot;第八章–磁盘与文件系统管理&quot;&gt;&lt;/
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>第一篇</title>
